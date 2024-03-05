@@ -40,11 +40,15 @@ jobs:
     #  with:
     #    name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
     #    path: ${{ env.main_project_module }}/build/outputs/apk/release/
+    - name: see
+      run: ls -alR app/build/outputs/apk/
+
+
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: >-
         gh release create ${{ github.ref_name }}
-        "app/build/outputs/apk/release/*.apk#app.apk"
+        "app/build/outputs/apk/release/app.apk#app.apk"
         --generate-notes
         --title "Version ${{ github.ref_name }}"
