@@ -38,6 +38,9 @@ jobs:
     #    name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
     #    path: ${{ env.main_project_module }}/build/outputs/apk/release/
 
+    - name: chck
+      run: ls -al
+
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
