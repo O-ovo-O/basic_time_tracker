@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="ot"
+        android:title="Set overtime"
+        android:summary="Set current 'clock'"
+        android:defaultValue="00:00:00" />
+    <Preference
+        android:key="clear_database"
+        android:title="Clear database"
+        android:summary="Clear all entries from the database" />
+    <Preference
+        android:key="zero_overtime"
+        android:title="Zero overtime hours"
+        android:summary="Set overtime count to zero" />
+</PreferenceScreen>
