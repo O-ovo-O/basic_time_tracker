@@ -1,7 +1,7 @@
 # Time tracking app
 
 Reasons this exists, was to check how difficult would it be to generate this app using chatgpt prompt.
-Basically prompt used was something like `prompt-used.md`
+Basically prompt used was something like `./prompt-used.txt`
 
 Mind you - prompt is far from great but then generated code (using probably older model)
 was far from perfect too. Didn't work - Android Room could not initialize its database in runtime :)

@@ -119,13 +119,14 @@ class WorkTimeDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATAB
         val db = this.readableDatabase
         val cursor: Cursor = db.rawQuery(selectQuery, null)
 
+        // yet another example, below was chat -gpt generated, works nicely in andr studio, fails CI
         if (cursor.moveToFirst()) {
             do {
                 val workEntry = WorkEntry(
-                    id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID)),
-                    startTime = cursor.getString(cursor.getColumnIndex(COLUMN_START_TIME)),
-                    endTime = cursor.getString(cursor.getColumnIndex(COLUMN_END_TIME)),
-                    totalTime = cursor.getLong(cursor.getColumnIndex(COLUMN_TOTAL_TIME))
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                    startTime = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_START_TIME)),
+                    endTime = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_END_TIME)),
+                    totalTime = cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_TOTAL_TIME))
                 )
                 workEntries.add(workEntry)
             } while (cursor.moveToNext())
